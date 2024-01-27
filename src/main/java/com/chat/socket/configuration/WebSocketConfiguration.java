@@ -14,14 +14,14 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer{
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         registry.enableSimpleBroker("/topic");
-        registry.setApplicationDestinationPrefixes("app");
+        registry.setApplicationDestinationPrefixes("/app");
     }
 
     // Nos permite registrar los endpoints, a los que se conectara el front end
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/chat-socket")
-        .setAllowedOrigins("/")
+        .setAllowedOrigins("http://localhost:4200")
         .withSockJS();
     }
 
