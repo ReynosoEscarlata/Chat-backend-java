@@ -1,5 +1,7 @@
 package com.chat.socket.dto;
 
+import java.time.LocalDateTime;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -9,5 +11,6 @@ public class ChatMessage {
     
     String message;
     String user;
+    LocalDateTime dateTimeSend;
     
 }
